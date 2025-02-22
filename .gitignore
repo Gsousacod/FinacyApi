@@ -8,3 +8,7 @@
 # Arquivos de build
 build/
 dist/
+
+bin/
+
+appsettings.json
