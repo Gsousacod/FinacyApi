@@ -1,1 +1,10 @@
-./appsettings.json
+
+
+.json
+
+.vscode/
+.idea/
+
+# Arquivos de build
+build/
+dist/
