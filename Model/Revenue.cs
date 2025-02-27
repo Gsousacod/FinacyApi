@@ -9,7 +9,7 @@ namespace FinacyApi.Model
 {
     public class Revenue
     {
-          [Key]
+        [Key]
         public int Id { get; set; }
 
         [Required]

@@ -139,3 +139,7 @@
 /home/gabriel/Documentos/C#/FinacyApi/obj/Debug/net8.0/FinacyApi.pdb
 /home/gabriel/Documentos/C#/FinacyApi/obj/Debug/net8.0/FinacyApi.genruntimeconfig.cache
 /home/gabriel/Documentos/C#/FinacyApi/obj/Debug/net8.0/ref/FinacyApi.dll
+/home/gabriel/Documentos/C#/FinacyApi/obj/Debug/net8.0/FinacyApi.sourcelink.json
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

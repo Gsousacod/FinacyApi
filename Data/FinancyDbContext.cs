@@ -20,23 +20,10 @@ namespace FinacyApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // Configuração de chaves estrangeiras
-            modelBuilder.Entity<Revenue>()
-                .HasOne<User>()
-                .WithMany(u => u.Revenues)
-                .HasForeignKey(r => r.UserId);
-
-            modelBuilder.Entity<Expense>()
-                .HasOne<User>()
-                .WithMany(u => u.Expenses)
-                .HasForeignKey(d => d.UserId);
-
-            modelBuilder.Entity<MetaFinancial>()
-                .HasOne<User>()
-                .WithMany(u => u.MetaFinancials)
-                .HasForeignKey(m => m.UserId);
+            modelBuilder.Entity<User>().HasKey(u => u.Id);
+            modelBuilder.Entity<Revenue>().HasKey(r => r.Id);
+            modelBuilder.Entity<Expense>().HasKey(e => e.Id);
+            modelBuilder.Entity<MetaFinancial>().HasKey(m => m.Id);
         }
         
     }

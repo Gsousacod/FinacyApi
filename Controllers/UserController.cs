@@ -3,11 +3,13 @@ using System.Threading.Tasks;
 using FinacyApi.Data;
 using FinacyApi.Model;
 using FinacyApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinacyApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/user")]
     public class UserController : ControllerBase
@@ -19,7 +21,7 @@ namespace FinacyApi.Controllers
             _context = context;
         }
 
-
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserViewModel>>> GetUsers()
         {
@@ -30,7 +32,7 @@ namespace FinacyApi.Controllers
                 Email = u.Email,
                 SalaryMonthly = u.SalaryMonthly,
                 DataCreated = u.DataCreated,
-                FinancialDistribution = u.CalculateFinancialDistribution()
+               
             })
             .ToListAsync();
            
@@ -41,7 +43,7 @@ namespace FinacyApi.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult<User>> Create([FromBody] User user)
+        public async Task<ActionResult<User>> Create([FromForm] User user)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
