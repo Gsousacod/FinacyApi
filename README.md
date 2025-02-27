@@ -112,7 +112,7 @@ Para acessar a documentação via Swagger, abra:
 
 ---
 ## 🚀 **Melhorias Futuras**
-- 📌 Autenticação JWT para segurança 🔐
+- 📌 Autorização com base no "role" de cada usuário.
 - 📌  Implementação de logs
 - 📌  Notificações sobre vencimento de contas
 - 📌  Relatórios financeiros em PDF

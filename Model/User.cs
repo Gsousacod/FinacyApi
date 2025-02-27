@@ -19,6 +19,9 @@ namespace FinacyApi.Model
         [Required]
         public string Password { get; set; }
 
+        [Required]
+        public string Role { get; set; }
+
         public decimal SalaryMonthly { get; set; }
 
         public DateTime DataCreated { get; set; } = DateTime.UtcNow;
