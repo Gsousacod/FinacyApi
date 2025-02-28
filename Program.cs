@@ -62,10 +62,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(key),
             ValidateIssuer = true,
             ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
-            ValidateAudience = true,
+            ValidateAudience = false,
             ValidAudience = builder.Configuration["JwtSettings:Audience"],
             ValidateLifetime = true
         };
+    });
+builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+        options.AddPolicy("ClientOnly", policy => policy.RequireRole("Client"));
     });
 
 builder.Services.AddSingleton<TokensService>(); // Adicionar TokenService

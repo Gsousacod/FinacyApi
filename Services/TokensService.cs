@@ -2,7 +2,6 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace FinacyApi.Services
@@ -12,13 +11,14 @@ namespace FinacyApi.Services
         
     private readonly IConfiguration _config = config;
 
-        public string GenerateToken(string userId, string email)
+        public string GenerateToken(string userId, string email , string role)
         {
             var key = Encoding.ASCII.GetBytes(_config["JwtSettings:Secret"]);
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userId),
                 new Claim(JwtRegisteredClaimNames.Email, email),
+                new Claim(ClaimTypes.Role, role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

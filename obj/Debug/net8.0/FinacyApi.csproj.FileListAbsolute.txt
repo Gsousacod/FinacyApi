@@ -143,3 +143,4 @@
 /home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
 /home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/BCrypt.Net-Next.dll

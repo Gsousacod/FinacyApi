@@ -23,16 +23,18 @@ namespace FinacyApi.Controllers
 
         
         [HttpGet]
+        [Authorize(Roles = "Admin")]
+        
         public async Task<ActionResult<IEnumerable<UserViewModel>>> GetUsers()
         {
-            var users = await _context.Users.Select(u => new UserViewModel()
+            var users = await _context.Users.Select(u => new UserViewModel
             {
                 Id = u.Id,
                 Name = u.Name,
                 Email = u.Email,
+                Role = u.Role,
                 SalaryMonthly = u.SalaryMonthly,
                 DataCreated = u.DataCreated,
-               
             })
             .ToListAsync();
            
@@ -42,11 +44,20 @@ namespace FinacyApi.Controllers
         }
 
         [HttpPost]
-
-        public async Task<ActionResult<User>> Create([FromForm] User user)
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<UserViewModel>> Create([FromForm] UserViewModel userVm)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            var user = new User{
+                Name = userVm.Name,
+                Email = userVm.Email,
+                Password = BCrypt.Net.BCrypt.HashPassword(userVm.Password),
+                Role = userVm.Role,
+                SalaryMonthly = userVm.SalaryMonthly,
+                DataCreated = userVm.DataCreated
+            };
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -54,6 +65,7 @@ namespace FinacyApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public IActionResult Update([FromBody] User user)
         {
             _context.Users.Update(user);
@@ -62,6 +74,7 @@ namespace FinacyApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var user = _context.Users.Find(id);
