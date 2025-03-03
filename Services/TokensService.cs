@@ -2,16 +2,17 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using FinacyApi.Services.Interface;
 using Microsoft.IdentityModel.Tokens;
 
 namespace FinacyApi.Services
 {
-    public class TokensService(IConfiguration config)
+    public class TokensService(IConfiguration config) : ITokenService
     {
         
     private readonly IConfiguration _config = config;
 
-        public string GenerateToken(string userId, string email , string role)
+         public string GenerateToken(string userId, string email , string role)
         {
             var key = Encoding.ASCII.GetBytes(_config["JwtSettings:Secret"]);
             var claims = new[]
@@ -35,6 +36,5 @@ namespace FinacyApi.Services
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
-
     }
 }

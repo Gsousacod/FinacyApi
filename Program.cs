@@ -6,11 +6,21 @@ using FinacyApi.Data;
 using System.Text;
 using FinacyApi.Services;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog((context, config) =>
+{
+    config
+        .Enrich.FromLogContext() // Adiciona contexto aos logs
+        .WriteTo.File("logs.txt", 
+            rollingInterval: RollingInterval.Day, // Gera um novo arquivo por dia
+            retainedFileCountLimit: 7, // Mantém logs dos últimos 7 dias
+            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj} {NewLine}{Exception}"); 
+});
 
-
+builder.Services.AddSingleton<LoggingService>(); 
 builder.Services.AddAuthorization();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -75,6 +85,8 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddSingleton<TokensService>(); // Adicionar TokenService
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
 
 app.UseSwagger();
 app.UseSwaggerUI();

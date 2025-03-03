@@ -144,3 +144,16 @@
 /home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
 /home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/home/gabriel/Documentos/C#/FinacyApi/bin/Debug/net8.0/Serilog.Sinks.File.dll
