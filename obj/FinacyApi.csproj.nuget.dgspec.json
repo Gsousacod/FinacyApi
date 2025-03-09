@@ -69,6 +69,14 @@
               "target": "Package",
               "version": "[9.0.3, )"
             },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.1.5, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.54, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[4.2.0, )"

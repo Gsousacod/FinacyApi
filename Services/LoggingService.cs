@@ -13,9 +13,7 @@ public class LoggingService
         _logger = logger;
     }
 
-    /// <summary>
-    /// Registra tentativas de login, indicando sucesso ou falha.
-    /// </summary>
+   
     public void LogLoginAttempt(string username, bool success)
     {
         if (success)
@@ -28,18 +26,14 @@ public class LoggingService
         }
     }
 
-    /// <summary>
-    /// Registra um log de advertência (Warning)
-    /// </summary>
-    /// <param name="message">Mensagem a ser registrada</param>
+    
+   
     public void LogWarning(string message)
     {
         _logger.LogWarning("[WARN] {Timestamp} - {Message}", DateTime.UtcNow, message);
     }
 
-    /// <summary>
-    /// Registra um erro com código e detalhes adicionais.
-    /// </summary>
+  
     public void LogError(int errorCode, string message, Exception? ex = null, Dictionary<string, object>? details = null)
     {
         var detailsMessage = details != null

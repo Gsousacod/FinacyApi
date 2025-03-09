@@ -24,7 +24,11 @@ namespace FinacyApi.Model
         public decimal SalaryMonthly { get; set; }
 
         public DateTime DataCreated { get; set; } = DateTime.UtcNow;
+       
 
-
+         // Relacionamentos
+        public List<Revenue> Revenues { get; set; } = new();  
+        public List<Expense> Expenses { get; set; } = new();  
+        public List<MetaFinancial> MetaFinancials { get; set; } = new();  
     }
 }

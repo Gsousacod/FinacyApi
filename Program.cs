@@ -7,6 +7,7 @@ using System.Text;
 using FinacyApi.Services;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using FinacyApi.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -84,6 +85,8 @@ builder.Services.AddAuthorization(options =>
     });
 
 builder.Services.AddSingleton<TokensService>(); // Adicionar TokenService
+builder.Services.AddScoped<IGenerateReport, GenerateReport>();
+
 var app = builder.Build();
 
 app.UseSerilogRequestLogging();

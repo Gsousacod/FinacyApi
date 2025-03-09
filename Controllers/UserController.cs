@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using FinacyApi.Data;
 using FinacyApi.Model;
+using FinacyApi.Services;
+using FinacyApi.Services.Interface;
 using FinacyApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,15 +11,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinacyApi.Controllers
 {
-    [Authorize]
+    // [Authorize]
     [ApiController]
     [Route("api/user")]
     public class UserController : ControllerBase
     {
 
         private readonly FinancyDbContext _context;
-        public UserController(FinancyDbContext context)
+        private readonly IGenerateReport _generateReport;
+        public UserController(FinancyDbContext context, IGenerateReport generateReport)
         {
+            _generateReport = generateReport;
             _context = context;
         }
 
@@ -82,6 +86,22 @@ namespace FinacyApi.Controllers
             _context.SaveChanges();
             return Ok(user);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByData(int id)
+        {
+            try
+            {
+                var pdfReport = await _generateReport.GenerateReportAsync(id); // Aguarda a execução
+                
+                return File(pdfReport, "application/pdf", "Relatorio_Financeiro.pdf");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
 
 
     }
