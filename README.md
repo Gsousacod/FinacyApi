@@ -112,8 +112,8 @@ Para acessar a documentação via Swagger, abra:
 
 ---
 ## 🚀 **Melhorias Futuras**
-- 📌 Autorização com base no "role" de cada usuário.
-- 📌  Implementação de logs
+- ✅ Autorização com base no "role" de cada usuário.
+- ✅ Implementação de logs
 - 📌  Notificações sobre vencimento de contas
 - 📌  Relatórios financeiros em PDF
 ---
