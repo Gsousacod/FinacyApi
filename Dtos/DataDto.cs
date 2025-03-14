@@ -1,8 +1,12 @@
+using FinacyApi.Model;
+
 public class ReportDto
 {
     public List<ExpenseDto> Expenses { get; set; }
     public List<RevenueDto> Revenues { get; set; }
     public List<MetaFinancialDto> MetaFinancial { get; set; }
+
+    public User User { get; set; }
 
 }
 
