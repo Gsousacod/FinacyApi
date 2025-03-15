@@ -96,26 +96,35 @@ Para acessar a documentação via Swagger, abra:
 |--------|------------------|------------------------------|
 | GET    | `/api/revenues`   | Lista todas as receitas      |
 | POST   | `/api/revenues`   | Adiciona uma nova receita    |
+| GET    | `/api/revenues/{id}` | Retorna uma receita específico|
+| PUT    | `/api/revenues/{id}` | Atualiza uma receita          |
+| DELETE | `/api/revenues/{id}` | Remove uma receita            |
 
 ### 💸 **Despesas**
 | Método | Rota             | Descrição                    |
 |--------|------------------|------------------------------|
 | GET    | `/api/expenses`   | Lista todas as despesas      |
 | POST   | `/api/expenses`   | Adiciona uma nova despesa    |
+| GET    | `/api/expense/{id}` | Retorna uma despesa específico|
+| PUT    | `/api/expense/{id}` | Atualiza uma despesa          |
+| DELETE | `/api/expense/{id}` | Remove uma despesa            |
 
 ### 🎯 **Metas Financeiras**
 | Método | Rota             | Descrição                    |
 |--------|------------------|------------------------------|
 | GET    | `/api/metas`      | Lista todas as metas financeiras |
 | POST   | `/api/metas`      | Adiciona uma nova meta financeira |
+| GET    | `/api/metas/{id}` | Retorna uma meta financeira específico|
+| PUT    | `/api/metas/{id}` | Atualiza uma meta financeira          |
+| DELETE | `/api/metas/{id}` | Remove uma meta financeira            |
 
 
 ---
 ## 🚀 **Melhorias Futuras**
 - ✅ Autorização com base no "role" de cada usuário.
 - ✅ Implementação de logs
-- 📌  Notificações sobre vencimento de contas
-- 📌  Relatórios financeiros em PDF
+- 📌 Notificações sobre vencimento de contas
+- ✅ Relatórios financeiros em PDF
 ---
 ## 👨‍💻 **Autor**
 - Desenvolvido por [Gabriel] 🚀
