@@ -24,6 +24,18 @@ builder.Host.UseSerilog((context, config) =>
 builder.Services.AddSingleton<LoggingService>(); 
 builder.Services.AddAuthorization();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .AllowAnyHeader();
+    });
+});
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FinancyDbContext>(options =>
     options.UseNpgsql(connectionString));
@@ -84,7 +96,7 @@ builder.Services.AddAuthorization(options =>
         options.AddPolicy("ClientOnly", policy => policy.RequireRole("Client"));
     });
 
-builder.Services.AddSingleton<TokensService>(); // Adicionar TokenService
+builder.Services.AddSingleton<TokensService>(); 
 builder.Services.AddScoped<IGenerateReport, GenerateReport>();
 
 var app = builder.Build();
@@ -94,6 +106,7 @@ app.UseSerilogRequestLogging();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthentication();
 app.UseAuthorization();

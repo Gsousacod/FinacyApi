@@ -1,9 +1,11 @@
 
+using System.Security.Claims;
 using FinacyApi.Data;
 using FinacyApi.Dtos;
 using FinacyApi.Model;
 using FinacyApi.Services;
 using FinacyApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,7 +32,7 @@ namespace FinacyApi.Controllers
         }
 
       [HttpPost("login")]
-        public async Task<ActionResult<dynamic>> Authenticate([FromForm] LoginDto loginDto)
+        public async Task<ActionResult<dynamic>> Authenticate([FromBody] LoginDto loginDto)
         {
             try
             {
@@ -41,6 +43,16 @@ namespace FinacyApi.Controllers
                 }
 
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
+                var userAcess =  new UserAcessViewModel
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email,
+                    Role = user.Role,
+                    SalaryMonthly = user.SalaryMonthly,
+                    DataCreated = user.DataCreated,
+                };
+        
                 
                 if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
                 {
@@ -48,11 +60,11 @@ namespace FinacyApi.Controllers
                     return Unauthorized(new { message = "Invalid email or password" });
                 }
 
-                var token = _tokensService.GenerateToken(user.Id.ToString(), user.Email, user.Role);
+                var jwt = _tokensService.GenerateToken(user.Id.ToString(), user.Email, user.Role);
                 
                 _loggingService.LogLoginAttempt(user.Email, true);
 
-                return Ok(new { token, message = "Login successful" });
+                return Ok(new { jwt, userAcess, message = "Login successful" });
             }
             catch (Exception error)
             {
@@ -101,7 +113,39 @@ namespace FinacyApi.Controllers
             }
         }
 
-        
+        [HttpGet("me")]
+        [Authorize] // Exige que o usuário esteja autenticado
+        public ActionResult<dynamic> GetUserInfo()
+        {
+            try
+            {
+                // Obter o usuário a partir do contexto (que está no token JWT)
+                var user = HttpContext.User;
+
+                if (user == null)
+                {
+                    return Unauthorized(new { message = "User not authenticated" });
+                }
+
+                // Pegar as informações do usuário a partir dos claims
+                var userId = user.FindFirstValue(ClaimTypes.NameIdentifier); // ID do usuário
+                var userEmail = user.FindFirstValue(ClaimTypes.Email); // Email do usuário
+                var userRole = user.FindFirstValue(ClaimTypes.Role); // Papel (role) do usuário
+
+                // Retornar as informações do usuário autenticado
+                return Ok(new
+                {
+                    Id = userId,
+                    Email = userEmail,
+                    Role = userRole
+                });
+            }
+            catch (Exception ex)
+            {
+                _loggingService.LogError(3, "Error retrieving user information", ex);
+                return StatusCode(500, new { message = "Internal server error. Please try again later." });
+            }
+        }
 
     }
 }

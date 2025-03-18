@@ -1,0 +1,247 @@
+2025-03-17 15:58:55 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 15:58:55 [INF] Now listening on: http://localhost:5129 
+2025-03-17 15:58:55 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 15:58:55 [INF] Hosting environment: Development 
+2025-03-17 15:58:55 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 16:49:53 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/index.html - null null 
+2025-03-17 16:49:53 [INF] HTTP GET /swagger/index.html responded 200 in 165.9345 ms 
+2025-03-17 16:49:53 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/index.html - 200 null text/html;charset=utf-8 305.6745ms 
+2025-03-17 16:49:53 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/swagger-ui-bundle.js - null null 
+2025-03-17 16:49:53 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-03-17 16:49:53 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 63.1961 ms 
+2025-03-17 16:49:53 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 66.1107ms 
+2025-03-17 16:49:54 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/v1/swagger.json - null null 
+2025-03-17 16:49:54 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 294.9119 ms 
+2025-03-17 16:49:54 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 297.9965ms 
+2025-03-17 19:27:57 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 19:27:57 [INF] Now listening on: http://localhost:5129 
+2025-03-17 19:27:57 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 19:27:57 [INF] Hosting environment: Development 
+2025-03-17 19:27:57 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 19:28:07 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/index.html - null null 
+2025-03-17 19:28:07 [INF] HTTP GET /swagger/index.html responded 200 in 140.7483 ms 
+2025-03-17 19:28:07 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/index.html - 200 null text/html;charset=utf-8 217.1141ms 
+2025-03-17 19:28:09 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/v1/swagger.json - null null 
+2025-03-17 19:28:09 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 283.0868 ms 
+2025-03-17 19:28:09 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 288.2005ms 
+2025-03-17 19:29:44 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 19:29:44 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:29:44 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 19:29:45 [INF] Executed DbCommand (42ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 19:29:45 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T22:29:45.9646089Z". 
+2025-03-17 19:29:45 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 19:29:45 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1819.55ms 
+2025-03-17 19:29:45 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:29:45 [INF] HTTP POST /api/auth/login responded 200 in 1970.7714 ms 
+2025-03-17 19:29:45 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 1991.9653ms 
+2025-03-17 19:39:37 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 19:39:37 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:39:37 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 19:39:37 [INF] Executed DbCommand (2ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 19:39:37 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T22:39:37.8630959Z". 
+2025-03-17 19:39:37 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 19:39:37 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 553.8961ms 
+2025-03-17 19:39:37 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:39:37 [INF] HTTP POST /api/auth/login responded 200 in 568.0862 ms 
+2025-03-17 19:39:37 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 576.0709ms 
+2025-03-17 19:52:10 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 19:52:10 [INF] Now listening on: http://localhost:5129 
+2025-03-17 19:52:10 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 19:52:10 [INF] Hosting environment: Development 
+2025-03-17 19:52:10 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 19:52:18 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/index.html - null null 
+2025-03-17 19:52:19 [INF] HTTP GET /swagger/index.html responded 200 in 79.0871 ms 
+2025-03-17 19:52:19 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/index.html - 200 null text/html;charset=utf-8 101.8428ms 
+2025-03-17 19:52:20 [INF] Request starting HTTP/1.1 GET http://localhost:5129/swagger/v1/swagger.json - null null 
+2025-03-17 19:52:20 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 168.5954 ms 
+2025-03-17 19:52:20 [INF] Request finished HTTP/1.1 GET http://localhost:5129/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 171.624ms 
+2025-03-17 19:52:57 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 51 
+2025-03-17 19:52:57 [INF] CORS policy execution failed. 
+2025-03-17 19:52:57 [INF] Request origin http://localhost:5129 does not have permission to access the resource. 
+2025-03-17 19:52:57 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:52:57 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 19:52:58 [INF] Executed DbCommand (41ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 19:52:58 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T22:52:58.9213782Z". 
+2025-03-17 19:52:58 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.Model.User, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 19:52:58 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1730.769ms 
+2025-03-17 19:52:58 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:52:58 [INF] HTTP POST /api/auth/login responded 200 in 1817.6557 ms 
+2025-03-17 19:52:58 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 1830.246ms 
+2025-03-17 19:54:42 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 19:54:42 [INF] Now listening on: http://localhost:5129 
+2025-03-17 19:54:42 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 19:54:42 [INF] Hosting environment: Development 
+2025-03-17 19:54:42 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 19:55:17 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 19:55:17 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:55:17 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 19:55:18 [INF] Executed DbCommand (39ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 19:55:19 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T22:55:19.1695093Z". 
+2025-03-17 19:55:19 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.Model.User, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 19:55:19 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1597.8265ms 
+2025-03-17 19:55:19 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 19:55:19 [INF] HTTP POST /api/auth/login responded 200 in 1687.2690 ms 
+2025-03-17 19:55:19 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 1731.6518ms 
+2025-03-17 20:00:07 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 20:00:08 [INF] Now listening on: http://localhost:5129 
+2025-03-17 20:00:08 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 20:00:08 [INF] Hosting environment: Development 
+2025-03-17 20:00:08 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 20:01:08 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:01:08 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:01:08 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:01:08 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:01:08 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:01:08 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:01:09 [INF] Executed DbCommand (43ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:01:09 [INF] Executed DbCommand (43ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:01:09 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Name", u."Email", u."Role", u."SalaryMonthly", u."DataCreated"
+FROM "Users" AS u 
+2025-03-17 20:01:09 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Name", u."Email", u."Role", u."SalaryMonthly", u."DataCreated"
+FROM "Users" AS u 
+2025-03-17 20:01:10 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:01:10.1790519Z". 
+2025-03-17 20:01:10 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[FinacyApi.ViewModels.UserViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:01:10 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:01:10.1921814Z". 
+2025-03-17 20:01:10 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[FinacyApi.ViewModels.UserViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:01:10 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1729.7971ms 
+2025-03-17 20:01:10 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1730.8879ms 
+2025-03-17 20:01:10 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:01:10 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:01:10 [INF] HTTP POST /api/auth/login responded 200 in 1866.6439 ms 
+2025-03-17 20:01:10 [INF] HTTP POST /api/auth/login responded 200 in 1810.6125 ms 
+2025-03-17 20:01:10 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 1837.821ms 
+2025-03-17 20:01:10 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 1925.6405ms 
+2025-03-17 20:06:14 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 20:06:14 [INF] Now listening on: http://localhost:5129 
+2025-03-17 20:06:14 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 20:06:14 [INF] Hosting environment: Development 
+2025-03-17 20:06:14 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 20:06:43 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:06:43 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:06:43 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:06:44 [INF] Executed DbCommand (39ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:06:45 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:06:45.2342885Z". 
+2025-03-17 20:06:45 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:06:45 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1813.5368ms 
+2025-03-17 20:06:45 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:06:45 [INF] HTTP POST /api/auth/login responded 200 in 1944.4990 ms 
+2025-03-17 20:06:45 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 2025.5947ms 
+2025-03-17 20:09:04 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:09:04 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:09:04 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:09:05 [INF] Executed DbCommand (28ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:09:05 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:09:05.5299299Z". 
+2025-03-17 20:09:05 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:09:05 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 659.3801ms 
+2025-03-17 20:09:05 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:09:05 [INF] HTTP POST /api/auth/login responded 200 in 677.7330 ms 
+2025-03-17 20:09:05 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 689.688ms 
+2025-03-17 20:10:36 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-17 20:10:37 [INF] Now listening on: http://localhost:5129 
+2025-03-17 20:10:37 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-17 20:10:37 [INF] Hosting environment: Development 
+2025-03-17 20:10:37 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-17 20:11:40 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:11:40 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:11:40 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:11:42 [INF] Executed DbCommand (39ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:11:42 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:11:42.6584036Z". 
+2025-03-17 20:11:42 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserAcessViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:11:42 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 1706.2492ms 
+2025-03-17 20:11:42 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:11:42 [INF] HTTP POST /api/auth/login responded 200 in 1815.0670 ms 
+2025-03-17 20:11:42 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 1875.6366ms 
+2025-03-17 20:15:20 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:15:20 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:15:20 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:15:20 [INF] Executed DbCommand (15ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:15:20 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:15:20.8198725Z". 
+2025-03-17 20:15:20 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserAcessViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:15:20 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 593.1717ms 
+2025-03-17 20:15:20 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:15:20 [INF] HTTP POST /api/auth/login responded 200 in 632.2678 ms 
+2025-03-17 20:15:20 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 657.1203ms 
+2025-03-17 20:20:45 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:20:45 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:20:45 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:20:46 [INF] Executed DbCommand (13ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:20:46 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:20:46.2539079Z". 
+2025-03-17 20:20:46 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserAcessViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:20:46 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 430.1244ms 
+2025-03-17 20:20:46 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:20:46 [INF] HTTP POST /api/auth/login responded 200 in 454.6791 ms 
+2025-03-17 20:20:46 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 456.8932ms 
+2025-03-17 20:22:11 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:22:11 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:22:11 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:22:11 [INF] Executed DbCommand (2ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:22:11 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:22:11.3964412Z". 
+2025-03-17 20:22:11 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserAcessViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:22:11 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 206.376ms 
+2025-03-17 20:22:11 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:22:11 [INF] HTTP POST /api/auth/login responded 200 in 207.2148 ms 
+2025-03-17 20:22:11 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 208.5183ms 
+2025-03-17 20:42:41 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-17 20:42:41 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:42:41 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-17 20:42:41 [INF] Executed DbCommand (16ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-17 20:42:41 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-17T23:42:41.7873736Z". 
+2025-03-17 20:42:41 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserAcessViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-17 20:42:41 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 309.7222ms 
+2025-03-17 20:42:41 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-17 20:42:41 [INF] HTTP POST /api/auth/login responded 200 in 318.4419 ms 
+2025-03-17 20:42:41 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 324.8824ms 

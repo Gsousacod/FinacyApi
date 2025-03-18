@@ -126,14 +126,13 @@ Para acessar a documentação via Swagger, abra:
 - 📌 Notificações sobre vencimento de contas
 - ✅ Relatórios financeiros em PDF
 ---
+
 ## 👨‍💻 **Autor**
 - Desenvolvido por [Gabriel] 🚀
 - Entre em contato: 📩 gs5103809@gmail.com
 - GitHub: github.com/Gsousacod
 
 📌 Gostou do projeto? Deixe uma estrela ⭐ no GitHub!
-
-
 ---
 
 ## ✅ **O que esse README cobre?**
