@@ -1,16 +1,16 @@
 
 
 .json
-
+.txt
 
 .vscode/
 .idea/
 
-# Arquivos de build
+
 build/
 dist/
 
 bin/
 
 appsettings.json
-.txt
+

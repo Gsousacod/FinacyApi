@@ -29,6 +29,6 @@ namespace FinacyApi.Model
 
         [Required]
         [StringLength(50)]
-        public string Category { get; set; } // Ex: Moradia, Transporte, Lazer
+        public string Category { get; set; }
     }
 }

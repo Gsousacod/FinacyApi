@@ -36,9 +36,12 @@ builder.Services.AddCors(options =>
     });
 });
 
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FinancyDbContext>(options =>
     options.UseNpgsql(connectionString));
+
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
