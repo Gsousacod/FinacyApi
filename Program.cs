@@ -14,14 +14,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, config) =>
 {
     config
-        .Enrich.FromLogContext() // Adiciona contexto aos logs
-        .WriteTo.File("logs.txt", 
-            rollingInterval: RollingInterval.Day, // Gera um novo arquivo por dia
-            retainedFileCountLimit: 7, // Mantém logs dos últimos 7 dias
-            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj} {NewLine}{Exception}"); 
+        .Enrich.FromLogContext()
+        .WriteTo.File("logs.txt",
+            rollingInterval: RollingInterval.Day,
+            retainedFileCountLimit: 7,
+            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj} {NewLine}{Exception}");
 });
 
-builder.Services.AddSingleton<LoggingService>(); 
+builder.Services.AddSingleton<LoggingService>();
 builder.Services.AddAuthorization();
 
 
@@ -71,7 +71,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-// Configurar autenticação JWT
+
 var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:Secret"]);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -96,7 +96,7 @@ builder.Services.AddAuthorization(options =>
         options.AddPolicy("ClientOnly", policy => policy.RequireRole("Client"));
     });
 
-builder.Services.AddSingleton<TokensService>(); 
+builder.Services.AddSingleton<TokensService>();
 builder.Services.AddScoped<IGenerateReport, GenerateReport>();
 
 var app = builder.Build();

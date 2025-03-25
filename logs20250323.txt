@@ -1,0 +1,19 @@
+2025-03-23 13:49:45 [INF] User profile is available. Using '/home/gabriel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-03-23 13:49:46 [INF] Now listening on: http://localhost:5129 
+2025-03-23 13:49:46 [INF] Application started. Press Ctrl+C to shut down. 
+2025-03-23 13:49:46 [INF] Hosting environment: Development 
+2025-03-23 13:49:46 [INF] Content root path: /home/gabriel/Documentos/C#/FinacyApi 
+2025-03-23 13:53:50 [INF] Request starting HTTP/1.1 POST http://localhost:5129/api/auth/login - application/json 42 
+2025-03-23 13:53:51 [INF] Executing endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-23 13:53:51 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object]] Authenticate(FinacyApi.Dtos.LoginDto) on controller FinacyApi.Controllers.AuthController (FinacyApi). 
+2025-03-23 13:53:53 [INF] Executed DbCommand (91ms) [Parameters=[@__loginDto_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."DataCreated", u."Email", u."Name", u."Password", u."Role", u."SalaryMonthly"
+FROM "Users" AS u
+WHERE u."Email" = @__loginDto_Email_0
+LIMIT 1 
+2025-03-23 13:53:54 [INF] Usuário 'admin@email' fez login com sucesso às "2025-03-23T16:53:54.6975404Z". 
+2025-03-23 13:53:54 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinacyApi.ViewModels.UserAcessViewModel, FinacyApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-23 13:53:54 [INF] Executed action FinacyApi.Controllers.AuthController.Authenticate (FinacyApi) in 3557.361ms 
+2025-03-23 13:53:54 [INF] Executed endpoint 'FinacyApi.Controllers.AuthController.Authenticate (FinacyApi)' 
+2025-03-23 13:53:54 [INF] HTTP POST /api/auth/login responded 200 in 3804.2950 ms 
+2025-03-23 13:53:54 [INF] Request finished HTTP/1.1 POST http://localhost:5129/api/auth/login - 200 null application/json; charset=utf-8 3948.0387ms 

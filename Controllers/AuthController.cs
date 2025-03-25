@@ -21,17 +21,17 @@ namespace FinacyApi.Controllers
 
         private readonly LoggingService _loggingService;
 
-       
 
-        public AuthController(TokensService tokensService , FinancyDbContext context , LoggingService loggingService)
+
+        public AuthController(TokensService tokensService, FinancyDbContext context, LoggingService loggingService)
         {
             _tokensService = tokensService;
             _context = context;
             _loggingService = loggingService;
-           
+
         }
 
-      [HttpPost("login")]
+        [HttpPost("login")]
         public async Task<ActionResult<dynamic>> Authenticate([FromBody] LoginDto loginDto)
         {
             try
@@ -43,7 +43,7 @@ namespace FinacyApi.Controllers
                 }
 
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
-                var userAcess =  new UserAcessViewModel
+                var userAcess = new UserAcessViewModel
                 {
                     Id = user.Id,
                     Name = user.Name,
@@ -52,8 +52,8 @@ namespace FinacyApi.Controllers
                     SalaryMonthly = user.SalaryMonthly,
                     DataCreated = user.DataCreated,
                 };
-        
-                
+
+
                 if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
                 {
                     _loggingService.LogWarning($"Login attempt failed for {loginDto.Email} at {DateTime.UtcNow}");
@@ -61,7 +61,7 @@ namespace FinacyApi.Controllers
                 }
 
                 var jwt = _tokensService.GenerateToken(user.Id.ToString(), user.Email, user.Role);
-                
+
                 _loggingService.LogLoginAttempt(user.Email, true);
 
                 return Ok(new { jwt, userAcess, message = "Login successful" });
@@ -78,7 +78,8 @@ namespace FinacyApi.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserViewModel>> RegisterUser([FromForm] UserRegisterDto model)
         {
-            try{
+            try
+            {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
@@ -86,9 +87,9 @@ namespace FinacyApi.Controllers
                 {
                     Name = model.Name,
                     Email = model.Email,
-                    Password = BCrypt.Net.BCrypt.HashPassword(model.Password), 
+                    Password = BCrypt.Net.BCrypt.HashPassword(model.Password),
                     SalaryMonthly = model.SalaryMonthly,
-                    Role = "Client", 
+                    Role = "Client",
                 };
 
                 _context.Users.Add(user);
@@ -99,27 +100,30 @@ namespace FinacyApi.Controllers
                     Id = user.Id,
                     Name = user.Name,
                     Email = user.Email,
-                    Password = user.Password,
+                    Role = user.Role,
+                    DataCreated = user.DataCreated,
                     SalaryMonthly = user.SalaryMonthly,
 
                 };
-            
 
-            return CreatedAtAction(nameof(RegisterUser), new { id = user.Id }, userViewModel);
-            
-            }catch(Exception ex){
+
+                return CreatedAtAction(nameof(RegisterUser), new { id = user.Id }, userViewModel);
+
+            }
+            catch (Exception ex)
+            {
                 _loggingService.LogError(2, "Error registering user", ex);
                 return StatusCode(500, new { message = "Internal server error. Please try again later." });
             }
         }
 
         [HttpGet("me")]
-        [Authorize] // Exige que o usuário esteja autenticado
+        [Authorize]
         public ActionResult<dynamic> GetUserInfo()
         {
             try
             {
-                // Obter o usuário a partir do contexto (que está no token JWT)
+
                 var user = HttpContext.User;
 
                 if (user == null)
@@ -127,12 +131,12 @@ namespace FinacyApi.Controllers
                     return Unauthorized(new { message = "User not authenticated" });
                 }
 
-                // Pegar as informações do usuário a partir dos claims
-                var userId = user.FindFirstValue(ClaimTypes.NameIdentifier); // ID do usuário
-                var userEmail = user.FindFirstValue(ClaimTypes.Email); // Email do usuário
-                var userRole = user.FindFirstValue(ClaimTypes.Role); // Papel (role) do usuário
 
-                // Retornar as informações do usuário autenticado
+                var userId = user.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userEmail = user.FindFirstValue(ClaimTypes.Email);
+                var userRole = user.FindFirstValue(ClaimTypes.Role);
+
+
                 return Ok(new
                 {
                     Id = userId,

@@ -16,7 +16,6 @@ public class RevenueController : ControllerBase
         _context = context;
     }
 
-    // GET: api/revenue
     [HttpGet]
     public async Task<ActionResult<IEnumerable<RevenueViewModel>>> GetRevenues()
     {
@@ -34,7 +33,7 @@ public class RevenueController : ControllerBase
         return Ok(revenues);
     }
 
-    // GET: api/revenue/5
+
     [HttpGet("{id}")]
     public async Task<ActionResult<RevenueViewModel>> GetRevenue(int id)
     {
@@ -52,7 +51,7 @@ public class RevenueController : ControllerBase
         });
     }
 
-    // POST: api/revenue
+
     [HttpPost]
     public async Task<ActionResult<Revenue>> CreateRevenue([FromBody] RevenueViewModel revenueVM)
     {
@@ -73,7 +72,7 @@ public class RevenueController : ControllerBase
         return CreatedAtAction(nameof(GetRevenue), new { id = revenue.Id }, revenue);
     }
 
-    // PUT: api/revenue/5
+
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateRevenue(int id, [FromBody] RevenueViewModel revenueVM)
     {
@@ -95,7 +94,7 @@ public class RevenueController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/revenue/5
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteRevenue(int id)
     {
