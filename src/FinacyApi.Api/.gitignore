@@ -1,0 +1,16 @@
+
+
+.json
+.txt
+
+.vscode/
+.idea/
+
+
+build/
+dist/
+
+bin/
+
+appsettings.json
+

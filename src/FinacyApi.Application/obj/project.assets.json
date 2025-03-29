@@ -1,0 +1,94 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "FinacyApi.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/FinacyApi.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FinacyApi.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FinacyApi.Domain/1.0.0": {
+      "type": "project",
+      "path": "../FinacyApi.Domain/FinacyApi.Domain.csproj",
+      "msbuildProject": "../FinacyApi.Domain/FinacyApi.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "FinacyApi.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/gabriel/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/gabriel/Documentos/C#/FinacyApi/src/FinacyApi.Application/FinacyApi.Application.csproj",
+      "projectName": "FinacyApi.Application",
+      "projectPath": "/home/gabriel/Documentos/C#/FinacyApi/src/FinacyApi.Application/FinacyApi.Application.csproj",
+      "packagesPath": "/home/gabriel/.nuget/packages/",
+      "outputPath": "/home/gabriel/Documentos/C#/FinacyApi/src/FinacyApi.Application/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/gabriel/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/home/gabriel/Documentos/C#/FinacyApi/src/FinacyApi.Domain/FinacyApi.Domain.csproj": {
+              "projectPath": "/home/gabriel/Documentos/C#/FinacyApi/src/FinacyApi.Domain/FinacyApi.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
